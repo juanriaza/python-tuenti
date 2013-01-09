@@ -1,6 +1,6 @@
 # python-tuenti
 
-[![build-status-image]][travis]
+[![Build Status](https://travis-ci.org/juanriaza/python-tuenti.png?branch=master)](https://travis-ci.org/juanriaza/python-tuenti)
 
 ## Overview
 
@@ -66,6 +66,3 @@ All the available requests are documented [here](https://github.com/juanriaza/py
 **9th Jan 2012**
 
 * First release.
-
-[build-status-image]: https://secure.travis-ci.org/juanriaza/python-tuenti.png?branch=master
-[travis]: http://travis-ci.org/juanriaza/python-tuenti?branch=master
