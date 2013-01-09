@@ -331,7 +331,6 @@
 	- Type: String
 - `contacts`
 	- Structure:
-	```python
 	[{'data': {
 		'phones': [{'number': String, 'label': String, 'type': String}],
 	    'emails': [{'mail': String, 'label': String, 'type': String}]},
@@ -341,14 +340,11 @@
 	    	'avatarUri': Uri,
 	    	'version': long,
 	    	'id': long}]
-	```
 - `deviceInfo`
 	- Structure: {'name': String, 'make': String, 'model': String}
 
-Notes:
+#### Notes
 
-- `contacts`
-	- TODO
 - `deviceInfo`
 	- 'name' = android.os.Build.PRODUCT
 	- 'make' = android.os.Build.MANUFACTURER
