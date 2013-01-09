@@ -1,4 +1,3 @@
-testsettings.py
 *.pyc
 dist/
 build/

@@ -1,14 +1,17 @@
+import os
+import sys
 import string
 import unittest
 import random
 from tuenti import TuentiSocialMessenger
-from testsettings import user, password
 
 
 class TestTuentiSocialMessenger(unittest.TestCase):
     def setUp(self):
         unittest.TestCase.setUp(self)
-        self.t = TuentiSocialMessenger.from_credentials(user, password)
+        self.user = os.environ.get('TUENTIUSER') or sys.argv[0]
+        password = os.environ.get('TUENTIPASSWORD') or sys.argv[1]
+        self.t = TuentiSocialMessenger.from_credentials(self.user, password)
 
     def tearDown(self):
         unittest.TestCase.tearDown(self)
@@ -19,7 +22,7 @@ class TestTuentiSocialMessenger(unittest.TestCase):
 
     def test_token_auth(self):
         auth_token, installation_id = self.t.get_auth_data()
-        tuenti_token = TuentiSocialMessenger.from_auth_token(user, auth_token, installation_id)
+        tuenti_token = TuentiSocialMessenger.from_auth_token(self.user, auth_token, installation_id)
         session_data = tuenti_token.request('Auth_getSessionInfo', {'installationId': self.t.installation_id})
         self.assertTrue('userId' in session_data)
         self.tuenti_logout(tuenti_token)
