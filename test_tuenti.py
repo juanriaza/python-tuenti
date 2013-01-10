@@ -18,7 +18,7 @@ class TestTuentiSocialMessenger(unittest.TestCase):
         self.tuenti_logout(self.t)
 
     def tuenti_logout(self, tuenti_inst):
-        tuenti_inst.request('Auth_closeSession', {'installationId': self.t.installation_id})
+        tuenti_inst.request('Auth_closeSession', {'installationId': tuenti_inst.installation_id})
 
     def test_token_auth(self):
         auth_token, installation_id = self.t.get_auth_data()
