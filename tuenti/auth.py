@@ -6,7 +6,8 @@ class TuentiAuthentication(AuthBase):
     """
     Attaches HTTP Tuenti Authentication to the given Request object.
     """
-    device_family = 'MDI3MDFmZjU4MGExNWM0YmEyYjA5MzRkODlmMjg0MTU6MC4yMjk5ODcwMCAxMzI0NDg5NjY0'
+    device_family = 'MDI3MDFmZjU4MGExNWM0YmEyYjA5MzRkODlmMjg0MTU6MC4yMjk5OD' \
+                    'cwMCAxMzI0NDg5NjY0'
 
     def __init__(self, auth_data, installation_id):
         auth_data.update({
