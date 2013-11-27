@@ -1,6 +1,8 @@
 # python-tuenti
 
 [![Build Status](https://travis-ci.org/juanriaza/python-tuenti.png?branch=master)](https://travis-ci.org/juanriaza/python-tuenti)
+[![Pypi Package](https://badge.fury.io/py/python-tuenti.png)](http://badge.fury.io/py/python-tuenti)
+[![Downloads](https://pypip.in/d/python-tuenti/badge.png)](https://crate.io/packages/python-tuenti/)
 
 ## Overview
 
