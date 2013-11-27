@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 import hashlib
+
 from requests.auth import AuthBase
 
 
@@ -36,9 +38,14 @@ class TuentiAuthorization(AuthBase):
     """
     Attaches HTTP Tuenti Authorization to the given Request object.
     """
+    device_family = 'MDI3MDFmZjU4MGExNWM0YmEyYjA5MzRkODlmMjg0MTU6MC4yMjk5OD' \
+                    'cwMCAxMzI0NDg5NjY0'
+
     def __init__(self, sid):
         self.sid = sid
 
     def __call__(self, r):
-        r.headers['X-Tuenti-Authorization'] = 'sess-token=%s' % self.sid
+        headers = 'sess-token=%s,device-family=%s' % (
+            self.sid, self.device_family)
+        r.headers['X-Tuenti-Authorization'] = headers
         return r

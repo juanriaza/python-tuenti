@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
 import os
 import sys
 import string
 import unittest
 import random
+
 from tuenti import TuentiSocialMessenger
 
 
@@ -33,17 +35,18 @@ class TestTuentiSocialMessenger(unittest.TestCase):
     def test_create_account(self):
         t_empty = TuentiSocialMessenger()
         generate_random = lambda: ''.join(
-            random.sample(string.ascii_lowercase, 6))
+            random.sample(string.ascii_lowercase, 8))
         params = {
             'email': '%s@chon.is' % generate_random(),
             'name': generate_random(),
             'last': generate_random(),
-            'gender': 1,
+            'password': generate_random(),
             'installationId': t_empty.installation_id,
             'deviceFamily': 'MDI3MDFmZjU4MGExNWM0YmEyYjA5MzRkODlmMjg0MTU6'
                             'MC4yMjk5ODcwMCAxMzI0NDg5NjY0'
         }
-        data = t_empty.request('Registration_createNewAccount', params)
+        data = t_empty.request(
+            'Registration_createNewAccountWithPassword', params)
         self.assertEqual(data['session']['newUser'], True)
         self.tuenti_logout(t_empty)
 

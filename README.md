@@ -9,7 +9,7 @@ Wrapper around the latest Tuenti API.
 ## Installation
 
 Install using `pip`, including any optional packages you want...
-	
+
 	$ pip install python-tuenti
 
 ...or clone the project from github.
@@ -49,6 +49,9 @@ And fire some requests:
 # single request
 data = t.request('Feed_getShareFeed', {'max': 20})
 
+# with a shortcut
+data = t.Feed_getShareFeed({'max': 20})
+
 # multiple request
 data = t.mrequest(('User_getRelationshipData'), ('Feed_getShareFeed', {'max': 20}), ...)
 ```
@@ -60,6 +63,13 @@ All the available requests are documented [here](https://github.com/juanriaza/py
     $ ./test_tuenti.py
 
 ## Changelog
+
+### 1.1.0
+
+**27th Nov 2013**
+
+* Shortcut for fire a request.
+* Registration test fixed.
 
 ### 1.0.0
 
